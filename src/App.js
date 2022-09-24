@@ -1,25 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import { increment, state, Todo } from "./mob/Todo";
+import Rutas from "./rutas/rutas";
+import { observer } from "mobx-react";
+
+const store = new Todo("Titulo", "descripcion");
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Rutas todo={store}></Rutas>
+      
     </div>
   );
 }
 
-export default App;
+export default (App);
